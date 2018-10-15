@@ -31,6 +31,13 @@ module.exports = {
     }catch(err){
       return res.badRequest({error: err.message}, null, err);
     }
+  },
+  async getUser(req, res){
+    debugger;
+    console.log(req);
+    const user = User.findOne({id: req});
+    
+    return res.json(user);
   }
 };
 

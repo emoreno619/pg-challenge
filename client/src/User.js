@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { Link, Router, Route, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { fetchUserDetail } from './module/actions'
 
 const mapStateToProps = state => ({
