@@ -44,7 +44,7 @@ module.exports.routes = {
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
 
   '/api/signup': 'UserController.signup',
-  '/api/user/:id': {
+  '/api/user/:name': {
                       controller: 'UserController',
                       action: 'getUser',
                       skipAssets: true,

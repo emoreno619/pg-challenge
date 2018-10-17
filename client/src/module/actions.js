@@ -1,27 +1,54 @@
 import axios from 'axios';
+import UserConstants from './constants';
 
-const AJAX = axios.create({
-});
+export const createUser = id => {
+	return (dispatch, getState) => {
+		const request = {
+			data: {email: 'eduardo@gmail.com', password:'abc', name:'eduardo'},
+			method: 'POST',
+			url: `http://localhost:1337/api/signup`,
+		};
 
-export const fetchUserDetail = id => {
+		return axios.request(request).then(
+			resp => {
+				console.log(resp);
+				// dispatch(createUserSuccess(resp.data));
+			},
+			err => {
+				// dispatch(createUserError(err));
+			},
+		);
+	};
+}
+
+
+export const fetchUser = id => {
 	return (dispatch, getState) => {
 		const params = { user_id: id };
 		const request = {
 			// params,
 			method: 'GET',
-			url: `/api/user/${id}`,
+			url: `http://localhost:1337/api/user/${id}`,
 		};
 
-		return AJAX.request(request).then(
+		return axios.request(request).then(
 			resp => {
-				console.log('eduardo');
 				console.log(resp);
-				// dispatch(fetchUserSuccess(resp.data));
+				dispatch(fetchUserSuccess(resp.data));
 			},
 			err => {
-				console.log('error');
-				// dispatch(fetchUserError(err));
+				dispatch(fetchUserError(err));
 			},
 		);
 	};
 }
+
+const fetchUserSuccess = data => ({
+	type: UserConstants.ON_FETCH_USER_SUCCESS,
+	payload: data,
+});
+
+const fetchUserError = data => ({
+	type: UserConstants.ON_FETCH_USER_ERROR,
+	payload: data,
+});

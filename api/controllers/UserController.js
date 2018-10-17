@@ -10,9 +10,11 @@ const stdlib = require('sails-stdlib');
 
 module.exports = {
   async signup(req, res){
-    if (_.any(['name', 'email', 'password'], attr => !req.body[attr] || req.body[attr].trim().length === 0 )) {
-      return res.badRequest({error: 'The provided fullName, password and/or email address are invalid.'});
-    }
+    debugger;
+    console.log(req);
+    // if (_.any(['name', 'email', 'password'], attr => !req.body[attr] || req.body[attr].trim().length === 0 )) {
+    //   return res.badRequest({error: 'The provided fullName, password and/or email address are invalid.'});
+    // }
     try{
       // TODO : Improve logic to generate unique username for new users.
       // Logic to generate username
@@ -34,9 +36,10 @@ module.exports = {
   },
   async getUser(req, res){
     debugger;
-    console.log(req);
-    const user = User.findOne({id: req});
-    
+    console.log(req.param('name'));
+    const user = await User.find({name: req.param('name')});
+    // const user = await User.find();
+    console.log(user);
     return res.json(user);
   }
 };

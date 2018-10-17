@@ -7,20 +7,14 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import rootReducer from './module/rootReducer';
 
 const composeEnhancers = composeWithDevTools({
       maxAge: 25,
       shouldRecordChanges: false,
 });
 
-const store = createStore((state = {}, action) => {
-  // switch (action){
-  //   case (action === 'getUser'){
-
-  //   }
-  // }
-  return state
-}, {}, composeEnhancers(applyMiddleware(thunkMiddleware)));
+const store = createStore(rootReducer, {}, composeEnhancers(applyMiddleware(thunkMiddleware)));
 
 class App extends Component {
   render() {
