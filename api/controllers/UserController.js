@@ -37,8 +37,8 @@ module.exports = {
   async getUser(req, res){
     debugger;
     console.log(req.param('name'));
+    // const user = await User.find({username: req.param('name')});
     const user = await User.find({name: req.param('name')});
-    // const user = await User.find();
     console.log(user);
     return res.json(user);
   }

@@ -30,6 +30,13 @@ module.exports = {
       example: 'nitinhayaran@gmail.com'
     },
 
+    appointments: {
+      type: 'json',
+      maxLength: 200,
+      description: 'arr ISO formatted Date string to represent an appointment',
+      example: '{ appointments: [2018-10-17T21:16:39.547Z]}',
+    },
+
     password: {
       type: 'string',
       required: true,

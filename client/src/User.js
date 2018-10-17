@@ -20,6 +20,7 @@ class User extends Component {
     const { createUser, fetchUser, match: { params } } = this.props;
     if(params.user_id){
       // createUser();
+      // Intl.DateTimeFormat().resolvedOptions().timeZone
       fetchUser(params.user_id);
     }
   }

@@ -1,4 +1,4 @@
 {"$$indexCreated":{"fieldName":"id","unique":true,"sparse":false}}
 {"$$indexCreated":{"fieldName":"username","unique":true,"sparse":false}}
 {"$$indexCreated":{"fieldName":"email","unique":true,"sparse":false}}
-{"createdAt":1539809778535,"updatedAt":1539809778535,"id":1,"email":"eduardo@gmail.com","password":"$2a$10$VRcLkff6UEyRBb/MslXToO1S9b9f9YjOl8f0WQbb5xO7nFn5XecN6","timezone":"Asia/Kolkata","username":"2BMoQGl01Z","full_name":"eduardo","_id":1}
+{"appointment":"","createdAt":1539809778535,"updatedAt":1539809778535,"id":1,"email":"eduardo@gmail.com","appointments":null,"password":"$2a$10$VRcLkff6UEyRBb/MslXToO1S9b9f9YjOl8f0WQbb5xO7nFn5XecN6","timezone":"Asia/Kolkata","username":"2BMoQGl01Z","full_name":"eduardo","_id":1}

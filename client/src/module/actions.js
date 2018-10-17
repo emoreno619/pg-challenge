@@ -24,7 +24,6 @@ export const createUser = id => {
 
 export const fetchUser = id => {
 	return (dispatch, getState) => {
-		const params = { user_id: id };
 		const request = {
 			// params,
 			method: 'GET',
